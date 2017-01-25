@@ -1,0 +1,1125 @@
+TimeQuest Timing Analyzer report for maq_refri
+Mon Dec 05 10:34:00 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'i_clk'
+ 12. Slow Model Hold: 'i_clk'
+ 13. Slow Model Minimum Pulse Width: 'i_clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'i_clk'
+ 24. Fast Model Hold: 'i_clk'
+ 25. Fast Model Minimum Pulse Width: 'i_clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; maq_refri                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C70F896C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; i_clk      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { i_clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 262.95 MHz ; 262.95 MHz      ; i_clk      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; i_clk ; -2.803 ; -64.956       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; i_clk ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; i_clk ; -1.380 ; -46.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'i_clk'                                                                                                                                                                              ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.803 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.825      ;
+; -2.742 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.764      ;
+; -2.732 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.754      ;
+; -2.672 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.694      ;
+; -2.671 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.693      ;
+; -2.661 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.683      ;
+; -2.636 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.658      ;
+; -2.601 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.623      ;
+; -2.600 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.622      ;
+; -2.590 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.612      ;
+; -2.565 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.587      ;
+; -2.530 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.552      ;
+; -2.530 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.552      ;
+; -2.529 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.551      ;
+; -2.519 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.541      ;
+; -2.495 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.517      ;
+; -2.494 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.516      ;
+; -2.459 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.481      ;
+; -2.459 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.481      ;
+; -2.458 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.480      ;
+; -2.448 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.470      ;
+; -2.424 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.446      ;
+; -2.424 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.446      ;
+; -2.423 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.445      ;
+; -2.388 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.410      ;
+; -2.388 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.410      ;
+; -2.387 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.409      ;
+; -2.377 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.399      ;
+; -2.353 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.375      ;
+; -2.353 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.375      ;
+; -2.352 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.374      ;
+; -2.321 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.343      ;
+; -2.317 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.339      ;
+; -2.317 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.339      ;
+; -2.316 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.338      ;
+; -2.306 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.328      ;
+; -2.282 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.304      ;
+; -2.282 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.304      ;
+; -2.281 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.303      ;
+; -2.250 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.272      ;
+; -2.247 ; DeBounce:debounce50|State[0]                               ; maq_refri:maquina|State[2]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.283      ;
+; -2.246 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.268      ;
+; -2.246 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.268      ;
+; -2.245 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.267      ;
+; -2.241 ; DeBounce:debounce50|State[0]                               ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.277      ;
+; -2.211 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.233      ;
+; -2.211 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.233      ;
+; -2.210 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.232      ;
+; -2.207 ; DeBounce:debounce1|State[1]                                ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.243      ;
+; -2.193 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.215      ;
+; -2.181 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.232      ;
+; -2.179 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.201      ;
+; -2.176 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.227      ;
+; -2.175 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.197      ;
+; -2.175 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.197      ;
+; -2.165 ; maq_refri:maquina|State[3]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.201      ;
+; -2.161 ; DeBounce:debounce50|State[1]                               ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.197      ;
+; -2.147 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.169      ;
+; -2.140 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.162      ;
+; -2.140 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.162      ;
+; -2.139 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.161      ;
+; -2.123 ; maq_refri:maquina|State[1]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.159      ;
+; -2.122 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.144      ;
+; -2.108 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.130      ;
+; -2.104 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.126      ;
+; -2.095 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.146      ;
+; -2.090 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.141      ;
+; -2.087 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.109      ;
+; -2.086 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.108      ;
+; -2.076 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.098      ;
+; -2.071 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.122      ;
+; -2.069 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.091      ;
+; -2.069 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.091      ;
+; -2.066 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.117      ;
+; -2.055 ; maq_refri:maquina|State[0]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.091      ;
+; -2.051 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.073      ;
+; -2.051 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.073      ;
+; -2.038 ; maq_refri:maquina|State[2]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.074      ;
+; -2.037 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.059      ;
+; -2.033 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.055      ;
+; -2.029 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 3.066      ;
+; -2.024 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 3.061      ;
+; -2.016 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.038      ;
+; -2.016 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.038      ;
+; -2.015 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.037      ;
+; -2.005 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.027      ;
+; -1.998 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.020      ;
+; -1.998 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.020      ;
+; -1.998 ; DeBounce:debounce50|State[1]                               ; maq_refri:maquina|State[2]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 3.034      ;
+; -1.987 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.038      ;
+; -1.982 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.015      ; 3.033      ;
+; -1.980 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.002      ;
+; -1.980 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.002      ;
+; -1.980 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 3.002      ;
+; -1.966 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 2.988      ;
+; -1.945 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 2.967      ;
+; -1.945 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 2.967      ;
+; -1.945 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 2.967      ;
+; -1.944 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 1.000        ; -0.014     ; 2.966      ;
+; -1.939 ; maq_refri:maquina|State[3]                                 ; maq_refri:maquina|State[0]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 2.975      ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'i_clk'                                                                                                                                                                              ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; DeBounce:debounce25|State[0]                               ; DeBounce:debounce25|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DeBounce:debounce25|State[1]                               ; DeBounce:debounce25|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DeBounce:debounce50|State[0]                               ; DeBounce:debounce50|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DeBounce:debounce50|State[1]                               ; DeBounce:debounce50|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DeBounce:debounce1|State[1]                                ; DeBounce:debounce1|State[1]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DeBounce:debounce1|State[0]                                ; DeBounce:debounce1|State[0]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.531 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.797      ;
+; 0.674 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|o_end_count        ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.940      ;
+; 0.771 ; DeBounce:debounce25|State[1]                               ; DeBounce:debounce25|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.037      ;
+; 0.773 ; DeBounce:debounce1|State[1]                                ; DeBounce:debounce1|State[0]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.039      ;
+; 0.778 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.044      ;
+; 0.778 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.044      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.779 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.045      ;
+; 0.787 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|o_end_count        ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.053      ;
+; 0.790 ; DeBounce:debounce50|State[1]                               ; DeBounce:debounce50|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.056      ;
+; 0.795 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.061      ;
+; 0.795 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.061      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.810 ; DeBounce:debounce50|State[0]                               ; DeBounce:debounce50|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.076      ;
+; 0.813 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.079      ;
+; 0.813 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; DeBounce:debounce25|State[0]                               ; DeBounce:debounce25|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.080      ;
+; 0.820 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.086      ;
+; 0.821 ; DeBounce:debounce1|State[0]                                ; DeBounce:debounce1|State[1]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.087      ;
+; 0.826 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.092      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.105      ;
+; 1.099 ; maq_refri:maquina|State[0]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.365      ;
+; 1.139 ; DeBounce:debounce25|State[1]                               ; maq_refri:maquina|State[3]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.405      ;
+; 1.178 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.444      ;
+; 1.178 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.444      ;
+; 1.188 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.454      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.225 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.491      ;
+; 1.225 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.491      ;
+; 1.225 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.491      ;
+; 1.225 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.491      ;
+; 1.245 ; maq_refri:maquina|State[2]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.511      ;
+; 1.249 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.515      ;
+; 1.249 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.515      ;
+; 1.259 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.525      ;
+; 1.259 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.525      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.526      ;
+; 1.277 ; DeBounce:debounce25|State[0]                               ; maq_refri:maquina|State[3]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.543      ;
+; 1.281 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.547      ;
+; 1.281 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.547      ;
+; 1.287 ; DeBounce:debounce25|State[1]                               ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 1.553      ;
+; 1.295 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; i_clk        ; i_clk       ; 0.000        ; -0.014     ; 1.547      ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'i_clk'                                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; i_clk ; Rise       ; i_clk                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce1|State[0]                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce1|State[0]                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce1|State[1]                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce1|State[1]                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce25|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce25|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce25|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce25|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce50|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce50|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce50|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce50|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[0]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[0]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[1]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[1]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[2]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[2]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[3]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[3]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|o_end_count        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|o_end_count        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce1|State[0]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce1|State[0]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce1|State[1]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce1|State[1]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce25|State[0]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce25|State[0]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce25|State[1]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce25|State[1]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce50|State[0]|clk                                    ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; 5.139 ; 5.139 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; 5.150 ; 5.150 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; 5.232 ; 5.232 ; Rise       ; i_clk           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; -4.905 ; -4.905 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; -4.918 ; -4.918 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; -5.001 ; -5.001 ; Rise       ; i_clk           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 8.923  ; 8.923  ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 9.386  ; 9.386  ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 9.172  ; 9.172  ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 9.424  ; 9.424  ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 9.432  ; 9.432  ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 11.269 ; 11.269 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 9.124  ; 9.124  ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 9.683  ; 9.683  ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 9.641  ; 9.641  ; Rise       ; i_clk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 8.650  ; 8.650  ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 9.227  ; 9.227  ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 9.012  ; 9.012  ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 9.258  ; 9.258  ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 9.285  ; 9.285  ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 10.947 ; 10.947 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 8.810  ; 8.810  ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 9.530  ; 9.530  ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 9.474  ; 9.474  ; Rise       ; i_clk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; i_clk ; -0.846 ; -11.448       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; i_clk ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; i_clk ; -1.380 ; -46.380               ;
++-------+--------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'i_clk'                                                                                                                                                                              ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                  ; To Node                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.846 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.865      ;
+; -0.815 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.834      ;
+; -0.811 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.830      ;
+; -0.781 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.800      ;
+; -0.780 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.799      ;
+; -0.776 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.795      ;
+; -0.759 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.778      ;
+; -0.746 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.765      ;
+; -0.745 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.764      ;
+; -0.741 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.760      ;
+; -0.724 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.743      ;
+; -0.712 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.731      ;
+; -0.711 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.730      ;
+; -0.710 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.729      ;
+; -0.706 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.725      ;
+; -0.690 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.709      ;
+; -0.689 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.708      ;
+; -0.677 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.696      ;
+; -0.676 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.695      ;
+; -0.675 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.694      ;
+; -0.671 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.690      ;
+; -0.655 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.674      ;
+; -0.655 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.674      ;
+; -0.654 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.673      ;
+; -0.642 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.661      ;
+; -0.641 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.660      ;
+; -0.640 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.659      ;
+; -0.636 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.655      ;
+; -0.620 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.639      ;
+; -0.620 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.639      ;
+; -0.619 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.638      ;
+; -0.607 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.626      ;
+; -0.606 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.625      ;
+; -0.605 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.624      ;
+; -0.603 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.622      ;
+; -0.601 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.620      ;
+; -0.585 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.604      ;
+; -0.585 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.604      ;
+; -0.584 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.603      ;
+; -0.572 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.591      ;
+; -0.571 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.590      ;
+; -0.570 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.589      ;
+; -0.568 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.587      ;
+; -0.550 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.569      ;
+; -0.550 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.569      ;
+; -0.549 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.568      ;
+; -0.537 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.556      ;
+; -0.536 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.555      ;
+; -0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.552      ;
+; -0.525 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.544      ;
+; -0.515 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.534      ;
+; -0.515 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.534      ;
+; -0.514 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.533      ;
+; -0.507 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.526      ;
+; -0.502 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.521      ;
+; -0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.517      ;
+; -0.490 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.509      ;
+; -0.480 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.499      ;
+; -0.480 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.499      ;
+; -0.477 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.496      ;
+; -0.476 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.495      ;
+; -0.472 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.491      ;
+; -0.467 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.486      ;
+; -0.463 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.482      ;
+; -0.455 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.474      ;
+; -0.455 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.474      ;
+; -0.445 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.464      ;
+; -0.445 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.464      ;
+; -0.442 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.461      ;
+; -0.442 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.461      ;
+; -0.441 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.460      ;
+; -0.439 ; DeBounce:debounce50|State[0]                               ; maq_refri:maquina|State[2]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 1.472      ;
+; -0.437 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.456      ;
+; -0.428 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.447      ;
+; -0.422 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.468      ;
+; -0.420 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.439      ;
+; -0.420 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.439      ;
+; -0.420 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.439      ;
+; -0.417 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.463      ;
+; -0.410 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.429      ;
+; -0.408 ; DeBounce:debounce50|State[0]                               ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 1.441      ;
+; -0.407 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.426      ;
+; -0.407 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.426      ;
+; -0.407 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.426      ;
+; -0.406 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.425      ;
+; -0.402 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.421      ;
+; -0.402 ; maq_refri:maquina|State[3]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 1.434      ;
+; -0.398 ; DeBounce:debounce1|State[1]                                ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 1.430      ;
+; -0.397 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.443      ;
+; -0.393 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.412      ;
+; -0.393 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.439      ;
+; -0.392 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.438      ;
+; -0.389 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 1.422      ;
+; -0.389 ; maq_refri:maquina|State[1]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 1.000        ; 0.000      ; 1.421      ;
+; -0.388 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.014      ; 1.434      ;
+; -0.386 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.405      ;
+; -0.385 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.404      ;
+; -0.385 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.404      ;
+; -0.385 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 1.000        ; -0.013     ; 1.404      ;
+; -0.384 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 1.000        ; 0.001      ; 1.417      ;
++--------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'i_clk'                                                                                                                                                                              ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                  ; To Node                                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; DeBounce:debounce25|State[0]                               ; DeBounce:debounce25|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DeBounce:debounce25|State[1]                               ; DeBounce:debounce25|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DeBounce:debounce50|State[0]                               ; DeBounce:debounce50|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DeBounce:debounce50|State[1]                               ; DeBounce:debounce50|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DeBounce:debounce1|State[1]                                ; DeBounce:debounce1|State[1]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DeBounce:debounce1|State[0]                                ; DeBounce:debounce1|State[0]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.243 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.395      ;
+; 0.329 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|o_end_count        ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.481      ;
+; 0.355 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.355 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.507      ;
+; 0.359 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.368 ; DeBounce:debounce50|State[0]                               ; DeBounce:debounce50|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.520      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; DeBounce:debounce25|State[0]                               ; DeBounce:debounce25|State[1]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; DeBounce:debounce1|State[1]                                ; DeBounce:debounce1|State[0]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.524      ;
+; 0.374 ; DeBounce:debounce25|State[1]                               ; DeBounce:debounce25|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.374 ; DeBounce:debounce1|State[0]                                ; DeBounce:debounce1|State[1]                                ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.526      ;
+; 0.376 ; maq_refri:maquina|contador:mod_contador|State[1]           ; maq_refri:maquina|contador:mod_contador|State[0]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|o_end_count        ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.529      ;
+; 0.381 ; DeBounce:debounce50|State[1]                               ; DeBounce:debounce50|State[0]                               ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.533      ;
+; 0.381 ; maq_refri:maquina|contador:mod_contador|State[0]           ; maq_refri:maquina|contador:mod_contador|State[1]           ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.533      ;
+; 0.481 ; maq_refri:maquina|State[0]                                 ; maq_refri:maquina|State[1]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.633      ;
+; 0.493 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.645      ;
+; 0.493 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.645      ;
+; 0.497 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.506 ; DeBounce:debounce25|State[1]                               ; maq_refri:maquina|State[3]                                 ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.658      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.528 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.680      ;
+; 0.528 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.680      ;
+; 0.532 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.684      ;
+; 0.532 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.686      ;
+; 0.534 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.686      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ; i_clk        ; i_clk       ; 0.000        ; 0.000      ; 0.698      ;
++-------+------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'i_clk'                                                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                     ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; i_clk ; Rise       ; i_clk                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce1|State[0]                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce1|State[0]                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce1|State[1]                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce1|State[1]                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce25|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce25|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce25|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce25|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce50|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce50|State[0]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; DeBounce:debounce50|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; DeBounce:debounce50|State[1]                               ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[0]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[0]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[1]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[1]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[2]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[2]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|State[3]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|State[3]                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|State[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|o_end_count        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|o_end_count        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[18] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[19] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[20] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[21] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[22] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[23] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[24] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[25] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[26] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[27] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[28] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[29] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[30] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[31] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; i_clk ; Rise       ; maq_refri:maquina|contador:mod_contador|tempo_contagem[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce1|State[0]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce1|State[0]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce1|State[1]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce1|State[1]|clk                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce25|State[0]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce25|State[0]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce25|State[1]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; i_clk ; Rise       ; debounce25|State[1]|clk                                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; i_clk ; Rise       ; debounce50|State[0]|clk                                    ;
++--------+--------------+----------------+------------------+-------+------------+------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; 2.782 ; 2.782 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; 2.805 ; 2.805 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; 2.852 ; 2.852 ; Rise       ; i_clk           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; -2.660 ; -2.660 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; -2.683 ; -2.683 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; -2.730 ; -2.730 ; Rise       ; i_clk           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 4.880 ; 4.880 ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 5.090 ; 5.090 ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 4.990 ; 4.990 ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 5.114 ; 5.114 ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 5.202 ; 5.202 ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 5.987 ; 5.987 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 5.002 ; 5.002 ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 5.235 ; 5.235 ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 5.180 ; 5.180 ; Rise       ; i_clk           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 4.739 ; 4.739 ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 5.012 ; 5.012 ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 4.913 ; 4.913 ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 5.031 ; 5.031 ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 5.157 ; 5.157 ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 5.838 ; 5.838 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 4.859 ; 4.859 ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 5.189 ; 5.189 ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 5.104 ; 5.104 ; Rise       ; i_clk           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.803  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  i_clk           ; -2.803  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -64.956 ; 0.0   ; 0.0      ; 0.0     ; -46.38              ;
+;  i_clk           ; -64.956 ; 0.000 ; N/A      ; N/A     ; -46.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; 5.139 ; 5.139 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; 5.150 ; 5.150 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; 5.232 ; 5.232 ; Rise       ; i_clk           ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; i_moeda_1  ; i_clk      ; -2.660 ; -2.660 ; Rise       ; i_clk           ;
+; i_moeda_25 ; i_clk      ; -2.683 ; -2.683 ; Rise       ; i_clk           ;
+; i_moeda_50 ; i_clk      ; -2.730 ; -2.730 ; Rise       ; i_clk           ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 8.923  ; 8.923  ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 9.386  ; 9.386  ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 9.172  ; 9.172  ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 9.424  ; 9.424  ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 9.432  ; 9.432  ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 11.269 ; 11.269 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 9.124  ; 9.124  ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 9.683  ; 9.683  ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 9.641  ; 9.641  ; Rise       ; i_clk           ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; o_led_S0  ; i_clk      ; 4.739 ; 4.739 ; Rise       ; i_clk           ;
+; o_led_S1  ; i_clk      ; 5.012 ; 5.012 ; Rise       ; i_clk           ;
+; o_led_S2  ; i_clk      ; 4.913 ; 4.913 ; Rise       ; i_clk           ;
+; o_led_S3  ; i_clk      ; 5.031 ; 5.031 ; Rise       ; i_clk           ;
+; o_led_S4  ; i_clk      ; 5.157 ; 5.157 ; Rise       ; i_clk           ;
+; o_led_S5  ; i_clk      ; 5.838 ; 5.838 ; Rise       ; i_clk           ;
+; o_led_S6  ; i_clk      ; 4.859 ; 4.859 ; Rise       ; i_clk           ;
+; o_led_S7  ; i_clk      ; 5.189 ; 5.189 ; Rise       ; i_clk           ;
+; o_led_S8  ; i_clk      ; 5.104 ; 5.104 ; Rise       ; i_clk           ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_clk      ; i_clk    ; 843      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; i_clk      ; i_clk    ; 843      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 18    ; 18   ;
+; Unconstrained Output Ports      ; 9     ; 9    ;
+; Unconstrained Output Port Paths ; 36    ; 36   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Dec 05 10:33:56 2016
+Info: Command: quartus_sta maq_refri -c maq_refri
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'maq_refri.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name i_clk i_clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.803
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.803       -64.956 i_clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 i_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -46.380 i_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.846
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.846       -11.448 i_clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 i_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -46.380 i_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 453 megabytes
+    Info: Processing ended: Mon Dec 05 10:34:00 2016
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+
